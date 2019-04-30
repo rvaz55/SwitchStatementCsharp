@@ -1,0 +1,41 @@
+ void Main()
+{
+bool carIsOn = true;
+TellMeTheType("lghwei");
+
+}
+
+// Define other methods and classes here
+/*Creating a function 'TellMeTheType' that determines which 'type' a 'case' is and as such
+decides which code to run */
+
+//////The parameter 'x' will be of the general-type 'object'
+static void TellMeTheType(object x)
+{
+//Evaluating 'object x' via the switch
+switch (x)
+{
+case int i:
+Console.WriteLine("It's and int!");
+/*Below is an 'interpolated string' meaning that the '$' will
+allow a string to contain expressions encapsulated by {}*/
+Console.WriteLine($"The square of {i} is {i*i}");
+break;
+case string s:
+Console.WriteLine("It's a string!");
+Console.WriteLine($"The length of {s} is {s.Length}");
+break;
+/* A bool is a bool regardless if it is 'true' or 'false',
+as such a bool case needs a 'when' keyword to determine if the
+bool is either true or false;*/
+case bool b when b == true:
+Console.WriteLine("True");
+break;
+case bool b when b == false:
+Console.WriteLine("False");
+break;
+default:
+Console.WriteLine("I don't know what x is...");
+break;
+}
+}
